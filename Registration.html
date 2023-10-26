@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 50vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-image: url("Background2.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+    form {
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 500px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+    h1, h4 {
+      text-align: center;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    select,
+    input[type="file"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    input[type="radio"] {
+      margin-right: 5px;
+    }
+    select {
+      appearance: none;
+      -webkit-appearance: none;
+      padding: 8px;
+      background: white url('down-arrow.png') no-repeat right center;
+      background-size: 20px;
+    }
+    input[type="file"] {
+      padding: 5px;
+    }
+    .gender-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .submit {
+      background-color: #36013F;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+    }
+    .back-button {
+      background-color: #36013F;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <form>
+    <h1>REGISTRATION FORM</h1>
+    <h4>ENTER YOUR DETAILS</h4>
+    <label for="first name">First Name:</label>
+    <input type="text" name="first_name" required>
+    <label for="last name">Last Name:</label>
+    <input type="text" name="last_name" required>
+    <label for="mobile">Mobile Number:</label>
+    <input type="text" name="mobile" pattern="[0-9]{10}" required>
+    <label for="email">Enter your email:</label>
+    <input type="email" id="email" name="email" required>
+    <label for="dob">Date Of Birth:</label>
+    <input type="date" name="dob" required>
+    <div class="gender-container">
+      <label>Gender:</label>
+      <input id="female" type="radio" name="gender" value="f" required>
+      <label for="female">Female</label>
+      <input id="male" type="radio" name="gender" value="m" required>
+      <label for="male">Male</label>
+    </div>
+    <label for="department">Department:</label>
+    <select id="department" name="department" required>
+      <option value="" disabled selected>Select your department</option>
+      <option value="CSE">CSE</option>
+      <option value="AIE">AIE</option>
+      <option value="CYS">CYS</option>
+      <option value="ECE">ECE</option>
+      <option value="CCE">CCE</option>
+      <option value="MECH">MECH</option>
+      <option value="ARE">ARE</option>
+    </select>
+    <label for="state">State:</label>
+    <select id="state" name="state" required>
+      <option value="" disabled selected>Select your state</option>
+      <option value="Andhra Pradesh">Andhra Pradesh</option>
+      <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+      <option value="Assam">Assam</option>
+      <option value="Bihar">Bihar</option>
+      <option value="Chhattisgarh">Chhattisgarh</option>
+      <option value="Goa">Goa</option>
+      <option value="Gujarat">Gujarat</option>
+      <option value="Haryana">Haryana</option>
+      <option value="Himachal Pradesh">Himachal Pradesh</option>
+      <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+      <option value="Jharkhand">Jharkhand</option>
+      <option value="Karnataka">Karnataka</option>
+      <option value="Kerala">Kerala</option>
+      <option value="Madhya Pradesh">Madhya Pradesh</option>
+      <option value="Maharashtra">Maharashtra</option>
+      <option value="Manipur">Manipur</option>
+      <option value="Meghalaya">Meghalaya</option>
+      <option value="Mizoram">Mizoram</option>
+      <option value="Nagaland">Nagaland</option>
+      <option value="Odisha (Orissa)">Odisha (Orissa)</option>
+      <option value="Punjab">Punjab</option>
+      <option value="Rajasthan">Rajasthan</option>
+      <option value="Sikkim">Sikkim</option>
+      <option value="Tamil Nadu">Tamil Nadu</option>
+      <option value="Telangana">Telangana</option>
+      <option value="Tripura">Tripura</option>
+      <option value="Uttar Pradesh">Uttar Pradesh</option>
+      <option value="Uttarakhand (Uttaranchal)">Uttarakhand (Uttaranchal)</option>
+      <option value="West Bengal">West Bengal</option>
+      <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+      <option value="Chandigarh">Chandigarh</option>
+      <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+      <option value="Daman and Diu">Daman and Diu</option>
+      <option value="Lakshadweep">Lakshadweep</option>
+      <option value="National Capital Territory of Delhi">National Capital Territory of Delhi</option>
+      <option value="Puducherry (Pondicherry)">Puducherry (Pondicherry)</option>
+    </select>
+    <div class="g-recaptcha" data-sitekey="6Lf7jsgoAAAAAHkFdvbd3LQr7HRfSmVyyXad3237"></div>
+    <br>
+    <a href="Thank You.html" class="submit">Register</a>
+    <a href="index.html" class="back-button">Back to Main Website</a>
+  </form>
+</body>
+</html>

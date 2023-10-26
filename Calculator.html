@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator Page</title>
+  <link rel="stylesheet" type="text/css" href="Cal.css">
+</head>
+<body>
+  <h1>Calculator Page</h1>
+
+  <div id="basic-calculator">
+    <h2>Basic Calculator</h2>
+    <input type="text" id="basic-display" readonly>
+    <div class="buttons">
+      <button onclick="clearDisplay()">C</button>
+      <button onclick="appendToDisplay('7')">7</button>
+      <button onclick="appendToDisplay('8')">8</button>
+      <button onclick="appendToDisplay('9')">9</button>
+      <button onclick="appendToDisplay('+')">+</button>
+      <button onclick="appendToDisplay('4')">4</button>
+      <button onclick="appendToDisplay('5')">5</button>
+      <button onclick="appendToDisplay('6')">6</button>
+      <button onclick="appendToDisplay('-')">-</button>
+      <button onclick="appendToDisplay('1')">1</button>
+      <button onclick="appendToDisplay('2')">2</button>
+      <button onclick="appendToDisplay('3')">3</button>
+      <button onclick="appendToDisplay('*')">*</button>
+      <button onclick="appendToDisplay('0')">0</button>
+      <button onclick="appendToDisplay('.')">.</button>
+      <button onclick="calculateResult()">=</button>
+      <button onclick="appendToDisplay('/')">/</button>
+    </div>
+  </div>
+
+  <div id="currency-converter">
+    <h2>Currency Converter (INR to USD)</h2>
+    <label for="inr-amount">INR:</label>
+    <input type="number" id="inr-amount">
+    <label for="usd-result">USD:</label>
+    <input type="text" id="usd-result" readonly>
+    <button id="convert-button">Convert</button>
+  </div>
+
+  <div id="age-calculator">
+    <h2>Age Calculator</h2>
+    <label for="birthdate">Birthdate:</label>
+    <input type="date" id="birthdate">
+    <p id="age-result">Your age is: </p>
+    <button id="calculate-age-button">Calculate</button>
+  </div>
+
+  <div id="income-tax-calculator">
+    <h2>Income Tax Calculator (INR)</h2>
+    <label for="income-amount">Income:</label>
+    <input type="number" id="income-amount">
+    <p id="tax-result">Tax amount: </p>
+    <button id="calculate-tax-button">Calculate</button>
+  </div>
+
+  <script src="cal.js"></script>
+</body>
+</html>
